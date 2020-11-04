@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Laboratory 3</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"/>
+</h:head>
+
+<h:body>
+    <div class="container">
+        <h1>Ганыс Герман Витальевич P3210 10873</h1>
+        <h2>Time:<span id="time_span"></span></h2>
+        <script type="text/javascript">
+            function updateTime() {
+                var currentTime = new Date();
+                document.getElementById('time_span').innerHTML = ' ' + currentTime.toLocaleTimeString();
+            }
+            updateTime();
+            setInterval(updateTime, 12000);
+        </script>
+        <a href="main.xhtml" class="button-primary">Start</a>
+    </div>
+</h:body>
+
+</html>
