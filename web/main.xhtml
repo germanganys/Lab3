@@ -32,8 +32,8 @@
 
                     <label for="y">Y Value:</label>
                     <h:inputText id="y" value="#{Record.y}" required="true">
-                        <f:validateLength maximum="6"/>
-                        <f:validateDoubleRange minimum="-4.999" maximum="4.999"/>
+                        <f:validateLength maximum="5"/>
+                        <f:validateDoubleRange minimum="-4.99" maximum="4.99"/>
                         <ace:ajax event="blur" render="msgs"/>
                     </h:inputText>
 
@@ -75,7 +75,8 @@
                     <br/>
                     <h:commandButton class="button-primary" update="msgs table" action="#{Record.onSubmit}"
                                      value="Send"/>
-                    <h:commandButton class="button-primary" onclick="window.location.href = 'start.xhtml'" value="Back Home"/>
+                    <h:commandButton class="button-primary" action="#{Record.back}" value="Back Home"/>
+
 
                     <h:commandButton style="display:none" id="refresh_table" >
                         <f:ajax render="table"/>
@@ -84,9 +85,7 @@
                     <ace:dataTable id="table"
                                    value="#{History.results}"
                                    var="result"
-                                   paginator="true"
-                                   paginatorPosition="bottom"
-                                   rows="10">
+                                   >
 
                         <ace:column id="id" headerText="Id">
                             <h:outputText value="#{result.id}"/>
@@ -119,6 +118,7 @@
             </div>
         </div>
     </div>
+
     <script type="text/javascript">
 
         var wsUri = "ws://" + document.location.host + "/Lab3/" + "backdoor";

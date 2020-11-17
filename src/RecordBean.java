@@ -1,8 +1,8 @@
+import javax.el.MethodExpression;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.print.DocFlavor;
+import javax.faces.event.ValueChangeEvent;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 @ManagedBean(name = "Record", eager = true)
@@ -59,4 +59,11 @@ public class RecordBean implements Serializable {
         this.r = r;
     }
 
+    public String ready() {
+        return "success";
+    }
+
+    public String back() {
+        return "success";
+    }
 }
